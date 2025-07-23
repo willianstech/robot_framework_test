@@ -57,6 +57,8 @@ This repository contains automated API and UI tests for [Reqres](https://reqres.
   ```sh
   robot tests/ui_tests.robot
   ```
+  **Both Tests:**
+  python -m robot -d results tests/
 
 ## Configuration
 
