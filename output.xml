@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-07-23T15:10:09.146657" rpa="false" schemaversion="5">
+<suite id="s1" name="Api Tests" source="c:\Users\willi\Documents\Estudos\Robot framework\tests\api_tests.robot">
+<test id="s1-t1" name="Search User by ID" line="5">
+<kw name="Search User" owner="api_keywords">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-07-23T15:10:09.918793" level="INFO">Creating Session using : alias=reqres, url=https://reqres.in/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>reqres</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-07-23T15:10:09.918407" elapsed="0.031917"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-07-23T15:10:10.128081" level="INFO">GET Request : url=https://reqres.in/api/users/2 
+ path_url=/api/users/2 
+ headers={'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-07-23T15:10:10.128390" level="INFO">GET Response : url=https://reqres.in/api/users/2 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 23 Jul 2025 18:10:10 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Content-Encoding': 'gzip', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"152-ApQgGHL6RKwaebFlrPCYPBO1xHg"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Ratelimit-Limit': '100', 'Ratelimit-Policy': '100;w=60', 'Ratelimit-Remaining': '96', 'Ratelimit-Reset': '60', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=gggzLEx%2ByJxysFtEoQOnM0KUuw2Jbh2sTqRpsyyRFUc%3D\\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\\u0026ts=1753288160"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=gggzLEx%2ByJxysFtEoQOnM0KUuw2Jbh2sTqRpsyyRFUc%3D&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;ts=1753288160"', 'Via': '1.1 heroku-router', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'DENY', 'X-Request-Id': '8b11a3d5-88a4-a033-83a7-5fcaac5d6b23', 'X-Xss-Protection': '1; mode=block', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '6050', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '963d220d18e5a51a-GRU', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=7864&amp;min_rtt=7817&amp;rtt_var=3025&amp;sent=5&amp;recv=7&amp;lost=0&amp;retrans=1&amp;sent_bytes=4272&amp;recv_bytes=770&amp;delivery_rate=116166&amp;cwnd=251&amp;unsent_bytes=0&amp;cid=d2f595042c0eccbf&amp;ts=52&amp;x=0"'} 
+ body={"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},"support":{"url":"https://contentcaddy.io?utm_source=reqres&amp;utm_medium=json&amp;utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}} 
+ </msg>
+<msg time="2025-07-23T15:10:10.128565" level="INFO">C:\Users\willi\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-07-23T15:10:10.129497" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>reqres</arg>
+<arg>/users/${id}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-23T15:10:09.950620" elapsed="0.179432"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-07-23T15:10:10.131221" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<arg>${response}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-07-23T15:10:10.130432" elapsed="0.001244"/>
+</kw>
+<arg>2</arg>
+<status status="PASS" start="2025-07-23T15:10:09.845126" elapsed="0.286830"/>
+</kw>
+<kw name="Verify Status Code" owner="api_keywords">
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-07-23T15:10:10.135600" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-07-23T15:10:10.134262" elapsed="0.001728"/>
+</kw>
+<arg>200</arg>
+<status status="PASS" start="2025-07-23T15:10:10.133185" elapsed="0.003188"/>
+</kw>
+<kw name="Verify User Name" owner="api_keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-23T15:10:10.139050" level="FAIL">Evaluating expression {'data': {'id': 2, 'email': 'janet.weaver@reqres.in', 'first_name': 'Janet', 'last_name': 'Weaver', 'avatar': 'https://reqres.in/img/faces/2-image.jpg'}, 'support': {'url': 'https://contentcaddy.io?utm_source=reqres&amp;utm_medium=json&amp;utm_campaign=referral', 'text': 'Tired of writing endless social media content? Let Content Caddy generate it for you.'}} failed: TypeError: Expression must be string, got dictionary.</msg>
+<var>${body}</var>
+<arg>${response.json()}</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="FAIL" start="2025-07-23T15:10:10.138133" elapsed="0.004193">Evaluating expression {'data': {'id': 2, 'email': 'janet.weaver@reqres.in', 'first_name': 'Janet', 'last_name': 'Weaver', 'avatar': 'https://reqres.in/img/faces/2-image.jpg'}, 'support': {'url': 'https://contentcaddy.io?utm_source=reqres&amp;utm_medium=json&amp;utm_campaign=referral', 'text': 'Tired of writing endless social media content? Let Content Caddy generate it for you.'}} failed: TypeError: Expression must be string, got dictionary.</status>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${body["data"]["first_name"]}</arg>
+<arg>${first_name}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2025-07-23T15:10:10.142755" elapsed="0.000310"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${body["data"]["last_name"]}</arg>
+<arg>${last_name}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2025-07-23T15:10:10.143612" elapsed="0.000202"/>
+</kw>
+<arg>Janet</arg>
+<arg>Weaver</arg>
+<status status="FAIL" start="2025-07-23T15:10:10.137462" elapsed="0.006698">Evaluating expression {'data': {'id': 2, 'email': 'janet.weaver@reqres.in', 'first_name': 'Janet', 'last_name': 'Weaver', 'avatar': 'https://reqres.in/img/faces/2-image.jpg'}, 'support': {'url': 'https://contentcaddy.io?utm_source=reqres&amp;utm_medium=json&amp;utm_campaign=referral', 'text': 'Tired of writing endless social media content? Let Content Caddy generate it for you.'}} failed: TypeError: Expression must be string, got dictionary.</status>
+</kw>
+<status status="FAIL" start="2025-07-23T15:10:09.843790" elapsed="0.301339">Evaluating expression {'data': {'id': 2, 'email': 'janet.weaver@reqres.in', 'first_name': 'Janet', 'last_name': 'Weaver', 'avatar': 'https://reqres.in/img/faces/2-image.jpg'}, 'support': {'url': 'https://contentcaddy.io?utm_source=reqres&amp;utm_medium=json&amp;utm_campaign=referral', 'text': 'Tired of writing endless social media content? Let Content Caddy generate it for you.'}} failed: TypeError: Expression must be string, got dictionary.</status>
+</test>
+<status status="FAIL" start="2025-07-23T15:10:09.273301" elapsed="0.875217"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Api Tests" id="s1" pass="0" fail="1" skip="0">Api Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
