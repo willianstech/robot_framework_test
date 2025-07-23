@@ -32,8 +32,8 @@ This repository contains automated API and UI tests for [Reqres](https://reqres.
 ├── tests/
 │   └── api_tests.robot
 │   └── ui_tests.robot
-└── README.md
-requirements.txt
+├── README.md
+└── requirements.txt
 ```
 
 ## Setup
