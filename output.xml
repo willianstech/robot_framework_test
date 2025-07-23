@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-07-23T17:09:59.858523" rpa="false" schemaversion="5">
+<suite id="s1" name="Ui Tests" source="c:\Users\willi\Documents\Estudos\Robot framework\tests\ui_tests.robot">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-07-23T17:10:00.564766" level="INFO">Opening browser 'chrome' to base url 'https://the-internet.herokuapp.com/login'.</msg>
+<arg>https://the-internet.herokuapp.com/login</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-23T17:10:00.500106" elapsed="13.575134"/>
+</kw>
+<test id="s1-t1" name="Login Failed" line="15">
+<kw name="Access Login Page" owner="ui_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-07-23T17:10:14.076881" level="INFO">Opening url 'https://the-internet.herokuapp.com/login'</msg>
+<arg>${URL_LOGIN}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-07-23T17:10:14.076653" elapsed="0.717328"/>
+</kw>
+<status status="PASS" start="2025-07-23T17:10:14.076139" elapsed="0.718090"/>
+</kw>
+<kw name="Fill Username and Password" owner="ui_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-23T17:10:14.795827" level="INFO">Typing text 'abcdef' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>${user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-23T17:10:14.795360" elapsed="0.087914"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-23T17:10:14.883961" level="INFO">Typing text 'AbC123!' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-23T17:10:14.883602" elapsed="0.067355"/>
+</kw>
+<arg>abcdef</arg>
+<arg>AbC123!</arg>
+<status status="PASS" start="2025-07-23T17:10:14.794946" elapsed="0.156221"/>
+</kw>
+<kw name="Click Login Button" owner="ui_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-23T17:10:14.953397" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-23T17:10:14.952707" elapsed="0.074820"/>
+</kw>
+<status status="PASS" start="2025-07-23T17:10:14.951846" elapsed="0.075888"/>
+</kw>
+<kw name="Verify Success Message" owner="ui_keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${message}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-23T17:10:15.028667" elapsed="0.407230"/>
+</kw>
+<msg time="2025-07-23T17:10:15.436148" level="INFO">${variable} = None</msg>
+<var>${variable}</var>
+<arg>Your username is invalid!</arg>
+<status status="PASS" start="2025-07-23T17:10:15.028237" elapsed="0.408031"/>
+</kw>
+<status status="PASS" start="2025-07-23T17:10:14.075514" elapsed="1.361801"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-23T17:10:15.440158" elapsed="2.211944"/>
+</kw>
+<status status="PASS" start="2025-07-23T17:09:59.916938" elapsed="17.735503"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Ui Tests" id="s1" pass="1" fail="0" skip="0">Ui Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

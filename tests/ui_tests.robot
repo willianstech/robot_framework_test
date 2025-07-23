@@ -11,3 +11,9 @@ Login Successful
     Fill Username and Password    tomsmith    SuperSecretPassword!
     Click Login Button
     ${variable}=    Verify Success Message    You logged into a secure area!
+
+Login Failed
+    Access Login Page
+    Fill Username and Password    abcdef    AbC123!
+    Click Login Button
+    ${variable}=    Verify Success Message    Your username is invalid!    

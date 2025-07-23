@@ -10,6 +10,7 @@ This repository contains automated API and UI tests for [Reqres](https://reqres.
 - **UI Testing:**
   - Automated login tests using SeleniumLibrary.
   - Success message verification.
+  - Login Failed
 
 ## Technologies
 
