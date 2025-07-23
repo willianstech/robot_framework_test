@@ -58,8 +58,11 @@ This repository contains automated API and UI tests for [Reqres](https://reqres.
   robot tests/ui_tests.robot
   ```
   **Both Tests:**
+  ```sh
   python -m robot -d results tests/
+  ```
 
+```
 ## Configuration
 
 - API base URL and keys are set in `resources/api_keywords.robot`.
@@ -68,3 +71,4 @@ This repository contains automated API and UI tests for [Reqres](https://reqres.
 ## Reporting
 
 Test results and logs are generated in the `results` directory after each run.
+```
